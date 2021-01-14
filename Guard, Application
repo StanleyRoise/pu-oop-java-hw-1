@@ -1,0 +1,27 @@
+import javax.swing.*;
+
+public class Application {
+    public static void main(String[] args) {
+        GameBoard gameBoard = new GameBoard();
+    }
+}
+
+
+
+import java.awt.*;
+
+public class Guard {
+    public void render(Graphics g) {
+        g.setColor(Color.yellow);
+        g.fillRect(10,10,50,50);
+    }
+    private int row;
+    private int col;
+    private String color;
+    private int point;
+
+    public Guard(int row, int col){
+        this.row=row;
+        this.col = col;
+    }
+}
