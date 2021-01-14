@@ -1,0 +1,51 @@
+import java.awt.*;
+import javax.swing.*;
+import java.util.ArrayList;
+
+
+public class GameBoard {
+
+    public static void main(String[] args) {
+        String[][] board = new String[5][5];
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                board[row][col] = " ";
+            }
+        }
+board[0][0] = "guard";
+        board[0][1] = "guard";
+        board[0][2] = "guard";
+        board[0][3] = "guard";
+        board[0][4] = "leader";
+
+        board[4][0] = "leader";
+        board[4][1] = "guard";
+        board[4][2] = "guard";
+        board[4][3] = "guard";
+        board[4][4] = "guard";
+
+
+        {
+            JFrame applicationFrame = new JFrame();
+            applicationFrame.setVisible(true);
+            applicationFrame.setSize(500, 500);
+            applicationFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        }
+
+    }
+
+    public void paint(Graphics g) {
+
+        for (int row = 0; row < 5; row++) {
+            for (int col = 0; col < 5;col++){
+                Tile title = new Tile(row,col);
+
+
+                Guard g1= new Guard(row,col);
+                g1.render(g);
+            }
+
+        }
+    }
+}
